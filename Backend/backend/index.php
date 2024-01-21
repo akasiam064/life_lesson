@@ -73,7 +73,7 @@
           <span class="tooltip">ดูคอมเม้น</span>
         </li>
         <li>
-          <a href="/Backend/backend/php/setting.html">
+          <a href="/Backend/backend/php/setting.php">
             <i class="bx bx-cog"></i>
             <span class="links_name">Setting</span>
           </a>

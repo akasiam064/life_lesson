@@ -13,4 +13,5 @@ $uid = $_GET['id'];
 $query = "DELETE FROM life_user WHERE id='$uid' LIMIT 1 ";
 $result = mysqli_query($connect, $query);
 
+
 ?>

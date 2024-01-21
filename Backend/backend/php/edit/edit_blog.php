@@ -82,50 +82,46 @@
         </li>
       </ul>
     </div>
-
-
-    <div class="container-sm px1">
-        <div class="card mt3 shadow-sm">
-            <div class="card-header">
-                <h4 class="mb-0">เเปลี่ยนแปลงข้อมูล <a href="../user.php" class="btn btn-dark float-end">Back</a></h4>
+    <section class="home-section">
+      <div class="form-create">
+        <div class="Type-name"><H1>แก้ไข blog</H1></div>
+        <div class="img-name-propertie">
+          <div class="img-twolow">
+            <img src="/img/img.png" alt="">
+            <div class="button ">
+              <div class="text-icon">
+                <i class="bx bx-cloud-upload"></i>
+                <span class="text">อัพโหลด</span>
+              </div>
             </div>
-
-            <form class="row gy-4" action="../edit/edit_user.php?id=<?=$uid?>" method="POST">
-            <div class="card-body">
-
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="">Email</label>
-                            <input type="email" required name="email" class="form-control" value="<?php echo $row['email'] ?>">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="">Username</label>
-                            <input type="text" required name="username" class="form-control" value="<?php echo $row['username'] ?>">
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="">Password</label>
-                            <input type="password" required name="password" class="form-control" value="<?php echo $row['password'] ?>">
-                        </div>
-                        <div class="input-group mb-3">
-                             <label class="input-group-text" for="inputGroupSelect01" >ตำแหน่ง</label>
-                             <select class="form-select" id="inputGroupSelect01" name="urole">
-                            <option value="user">ผู้ใช้</option>
-                            <option value="admin">ผู้ดูแล</option>
-                            
-                               </select>
-                        </div>
-                        <div class="d-grid gap-2">
-                              <button class="btn btn-primary" type="submit" name="submit">ยืนยันการเปลี่ยนแปลง</button>
-                        </div>
-                    </div>
-                </form>
+          </div>
+          <div class="name-type">
+            <h5>ชื่อblog</h5>
+            <input type="nameinput" name="name-type" placeholder="ชื่อblog">
+            <div class="propertie">
+              <h5>รายละเอียด</h5>
+              <input type="propertie" placeholder="รายละเอียด" class="propertie-h5">
             </div>
+            <div class="link-propertie">
+              <h5>Link</h5>
+              <input type="propertie" placeholder="รายละเอียด" class="propertie-link">
+            </div>
+            <div class="button-type">
+              <button class="alert-yon">
+                <span class="yon"><a href="../index.html">ย้อนกลับ</a></span>
+            </button>
+              <button class="ui-btn">
+                <span>
+                  ยืนยันทำรายการ
+                </span>
+              </button>
+            </div>
+          </div>
+          
         </div>
-    </div>
+      </div>
+    </section>
 
-
-    
-    <script src="/Backend/backend/js/create_book.js"></script>
-    <script src="/Backend/backend/js/slim.js"></script>
-    <script src="/Backend/backend/js/popper.js"></script>
-    <script src="/Backend/backend/js/bootstrap.js"></script>
+    <script src="/js/create_book.js"></script>
+  </body>
+</html>

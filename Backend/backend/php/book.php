@@ -24,35 +24,35 @@
           <span class="tooltip">Search</span>
         </li>
         <li>
-          <a href="/Backend/backend/index.html">
+          <a href="/Backend/backend/index.php">
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
           <span class="tooltip">Dashboard</span>
         </li>
         <li>
-          <a href="/Backend/backend/php/user.html">
+          <a href="/Backend/backend/php/user.php">
             <i class="bx bx-user"></i>
             <span class="links_name">User</span>
           </a>
           <span class="tooltip">User</span>
         </li>
         <li>
-          <a href="/Backend/backend/php/book.html">
+          <a href="/Backend/backend/php/book.php">
             <i class="bx bx-book-open"></i>
             <span class="links_name">เพิ่มข้อมูล หนังสือ</span>
           </a>
           <span class="tooltip">เพิ่มข้อมูล หนังสือ</span>
         </li>
         <li>
-          <a href="/Backend/backend/php/podcat.html">
+          <a href="/Backend/backend/php/podcat.php">
             <i class="bx bx-book-heart"></i>
             <span class="links_name">เพิ่มข้อมูล potcat</span>
           </a>
           <span class="tooltip">เพิ่มข้อมูล potcat</span>
         </li>
         <li>
-          <a href="/Backend/backend/php/blog.html">
+          <a href="/Backend/backend/php/blog.php">
             <i class="bx bxl-blogger"></i>
             <span class="links_name">เพิ่มข้อมูล blog</span>
           </a>
@@ -84,12 +84,19 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <h1 class="pb-4"> แสดงข้อมูล BOOK </h1>
-                        <button class="Btn">
+                        <a href="../php/create/create_book.php">
+
+                        <button class="Btn" >
   
                             <div class="sign">+</div>
                             
                             <div class="text">Create</div>
                           </button>
+
+
+                        </a>
+
+
                         <span class="float-end" >มีข้อมูลหนังสือทั้งหมด  รายการ </span>     
                     </div>
                     <div class="col-lg-10">
@@ -120,7 +127,7 @@
                                                   
                                                 </button>
                                                   
-                                                <button class="edit-button"> <a href="/Backend/backend/php/edit/edit_blog.html">EDIT</a>
+                                                <button class="edit-button"> <a href="/Backend/backend/php/edit/edit_blog.php?id=">EDIT</a>
                                                 </button>
                                                 <button class="bin-button">
                                                     <svg

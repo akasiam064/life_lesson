@@ -43,21 +43,21 @@ require_once("../php/config/connection.php")
           <span class="tooltip">User</span>
         </li>
         <li>
-          <a href="/Backend/backend/php/book.html">
+          <a href="/Backend/backend/php/book.php">
             <i class="bx bx-book-open"></i>
             <span class="links_name">เพิ่มข้อมูล หนังสือ</span>
           </a>
           <span class="tooltip">เพิ่มข้อมูล หนังสือ</span>
         </li>
         <li>
-          <a href="/Backend/backend/php/podcat.html">
+          <a href="/Backend/backend/php/podcat.php">
             <i class="bx bx-book-heart"></i>
             <span class="links_name">เพิ่มข้อมูล potcat</span>
           </a>
           <span class="tooltip">เพิ่มข้อมูล potcat</span>
         </li>
         <li>
-          <a href="/Backend/backend/php/blog.html">
+          <a href="/Backend/backend/php/blog.php">
             <i class="bx bxl-blogger"></i>
             <span class="links_name">เพิ่มข้อมูล blog</span>
           </a>

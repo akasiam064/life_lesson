@@ -4,8 +4,9 @@
   <head>
     <meta charset="UTF-8">
     <title> </title>
-    <link rel="stylesheet" href="/css/blog_page.css">
+    <link rel="stylesheet" href="/css/book_page.css">
     <!-- Boxicons CDN Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="shortcut icon" href="https://img2.pic.in.th/pic/iconfa.png">
@@ -77,96 +78,154 @@
   </nav>
   </div>
 
+
     <!------- End Nav ------->
 
     <!-------- img banner-->
 
     <section>
-      <img src="/img/banner/bannerblog.png" alt="" class="idx">
+      <img src="/img/banner/bannerblog.png" alt="">
     </section>
 
+  <div class="type-search">
 
-    <div class="type-search">
+    <div class="name-type"><h2>BOOK | PAGE</h2></div>
 
-      <div class="name-type"><h2>BLOG | PAGE</h2></div>
-  
-  
-    </div>
+  </div>
+
+    
+
 
     <!--------------  BODY CARD -------->
 
     <div class="card-container">
-       <div class="card">
-        <img src="/img/product/pro1.png" alt="">
-        <div class="card-content">
-          <h3>Product</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate adipisci iure, eos dolorem sit voluptatibus quaerat non eveniet itaque?</p>
-          <a href="" class="btn-block">รายละเอียด</a>
-        </div>
-       </div>
 
-       <div class="card">
-        <img src="/img/product/pro1.png" alt="">
-        <div class="card-content">
-          <h3>Product</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate adipisci iure, eos dolorem sit voluptatibus quaerat non eveniet itaque?</p>
-          <a href="" class="btn-block">รายละเอียด</a>
-        </div>
+    <div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
        </div>
+  </div>
+</div>
 
-       <div class="card">
-        <img src="/img/product/pro1.png" alt="">
-        <div class="card-content">
-          <h3>Product</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate adipisci iure, eos dolorem sit voluptatibus quaerat non eveniet itaque?</p>
-          <a href="" class="btn-block">รายละเอียด</a>
-        </div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
        </div>
+  </div>
+</div>
 
-       <div class="card">
-        <img src="/img/product/pro1.png" alt="">
-        <div class="card-content">
-          <h3>Product</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate adipisci iure, eos dolorem sit voluptatibus quaerat non eveniet itaque?</p>
-          <a href="" class="btn-block">รายละเอียด</a>
-        </div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
        </div>
+  </div>
+</div>
 
-       <div class="card">
-        <img src="/img/product/pro1.png" alt="">
-        <div class="card-content">
-          <h3>Product</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate adipisci iure, eos dolorem sit voluptatibus quaerat non eveniet itaque?</p>
-          <a href="" class="btn-block">รายละเอียด</a>
-        </div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
        </div>
+  </div>
+</div>
 
-       <div class="card">
-        <img src="/img/product/pro1.png" alt="">
-        <div class="card-content">
-          <h3>Product</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate adipisci iure, eos dolorem sit voluptatibus quaerat non eveniet itaque?</p>
-          <a href="" class="btn-block">รายละเอียด</a>
-        </div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
        </div>
+  </div>
+</div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
+       </div>
+  </div>
+</div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
+       </div>
+  </div>
+</div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
+       </div>
+  </div>
+</div>
 
-       <div class="card">
-        <img src="/img/product/pro1.png" alt="">
-        <div class="card-content">
-          <h3>Product</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate adipisci iure, eos dolorem sit voluptatibus quaerat non eveniet itaque?</p>
-          <a href="" class="btn-block">รายละเอียด</a>
-        </div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
        </div>
-
-       <div class="card">
-        <img src="/img/product/pro1.png" alt="">
-        <div class="card-content">
-          <h3>Product</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate adipisci iure, eos dolorem sit voluptatibus quaerat non eveniet itaque?</p>
-          <a href="" class="btn-block">รายละเอียด</a>
-        </div>
+  </div>
+</div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
        </div>
+  </div>
+</div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
+       </div>
+  </div>
+</div>
+<div class="card" style="width: 21rem;">
+  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
+       </div>
+  </div>
+</div>
+  
     </div>
 
 
@@ -179,6 +238,6 @@
       <!----- Footer End --->
   
       <script src="/js/search.js"></script>
-  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
