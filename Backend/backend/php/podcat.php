@@ -1,3 +1,9 @@
+<?php 
+
+require_once("../php/config/connection.php")
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -59,11 +65,12 @@
           <span class="tooltip">เพิ่มข้อมูล blog</span>
         </li>
         <li>
-          <a href="#">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Setting</span>
+        <li>
+          <a href="../php/comment/comment.php">
+            <i class='bx bx-comment'></i>
+            <span class="links_name">คอมเม้น</span>
           </a>
-          <span class="tooltip">Setting</span>
+          <span class="tooltip">ดูคอมเม้น</span>
         </li>
         <li class="profile">
           <div class="profile-details">
@@ -73,7 +80,7 @@
               <div class="job">Devloper</div>
             </div>
           </div>
-          <i class="bx bx-log-out" id="log_out"></i>
+          <a href="../php/page/life_out.php"><i class="bx bx-log-out" id="log_out"></i></a>
         </li>
       </ul>
     </div>
@@ -95,7 +102,17 @@
 
 
                         </a>
-                        <span class="float-end" >มีข้อมูลหนังสือทั้งหมด  รายการ </span>     
+
+                        <?php 
+          
+                         $sql = "SELECT COUNT(*) as id From life_podcat";
+                         $query = $conn->prepare($sql);
+                         $query->execute();
+                         $fetch = $query->fetch();
+
+                         ?>
+
+                        <span class="float-end" >มีข้อมูล PODCAT ทั้งหมด <?= $fetch['id'] ?> รายการ </span>     
                     </div>
                     <div class="col-lg-10">
                         <div class="table-responsive" >
@@ -103,20 +120,37 @@
                                 <thead>
                                 <tr class="text-center text-light bg-dark">
                                     <th>#</th>
-                                    <th>img</th>
-                                    <th>username</th>
+                                    <th>youtube</th>
+                                    <th>ชื่อหัวข้อ</th>
+                                    <th>ผู้แต่ง</th>
                                     <th>รายละเอียด</th>
                                     <th>จัดการ</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+
+                                <?php
+                                $sql ="SELECT * FROM life_podcat";
+                                $podcat_data = $conn->prepare($sql);
+                                $podcat_data->execute();
+                                $data = $podcat_data->fetch();
+
+                               
+
+                                {
+
+                                ?>
+                                <?PHP foreach($podcat_data as $data) : ?>
                                 
                                     <tr class="text-center">
-                                        <td> 1 </td>
-                                        <td><img src="/Backend/backend/img/me1.png" alt="" style="width: 60px; height: 60px;"></td>
-                                        <td>  aaaa</td>
+                                        <td><?= $data['id']; ?></td>
+                                        <td><video width="60" height="60" >
+                                                          <source src="<?= $data['YT_URL']; ?>" type="video/mp4">
+                                        </video></td>
+                                        <td><?= $data['name']; ?></td>
                                         
-                                        <td> assss </td>
+                                        <td><?= $data['refer']; ?></td>
+                                        <td><?= $data['detail']; ?></td>
                                         <td>
                                             <div class="btn-group">
                                                 <button class="animated-button">
@@ -125,6 +159,7 @@
                                                   
                                                   <button class="edit-button"> <a href="/Backend/backend/php/edit/edit_blog.php">EDIT</a>
                                                   </button>
+                                                <a href="../php/delete/delete_podcat.php?id=<?=$data['id']?>">
                                                 <button class="bin-button">
                                                     <svg
                                                       class="bin-top"
@@ -162,9 +197,15 @@
                                                       <path d="M21 6V29" stroke="white" stroke-width="4"></path>
                                                     </svg>
                                                   </button>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
+
+                                    <?php endforeach; ?>
+                                <?php 
+                                }
+                                ?>
                                     
                                     </div>
                                 

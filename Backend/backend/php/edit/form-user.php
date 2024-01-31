@@ -57,19 +57,13 @@
           <span class="tooltip">เพิ่มข้อมูล blog</span>
         </li>
         <li>
-          <a href="../backend/php/comment/comment.php">
+          <a href="../php/comment/comment.php">
             <i class='bx bx-comment'></i>
             <span class="links_name">คอมเม้น</span>
           </a>
           <span class="tooltip">ดูคอมเม้น</span>
         </li>
-        <li>
-          <a href="/Backend/backend/php/setting.php">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Setting</span>
-          </a>
-          <span class="tooltip">Setting</span>
-        </li>
+        
         <li class="profile">
           <div class="profile-details">
             <img src="/backend/backend/img/me1.png" alt="profileImg" />

@@ -420,6 +420,15 @@ h1::after {
   padding-top: 10px;
 }
 
+.pannel a {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: white;
+  padding-top: 10px;
+  text-decoration: none;
+  padding-top: 10px;
+}
 .faq {
   border: 1px solid rgba(0, 0, 0, 0.2);
   margin: 10px 0;

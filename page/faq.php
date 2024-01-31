@@ -123,6 +123,14 @@
   </div>
 </div>
 
+<div class="faq active">
+  <button class="accordion">คุณสามารถ ตอบแบบสอบถามของเราได้ ?
+  <i class="fa-solid fa-chevron-down" ></i> </button>
+  <div class="pannel">
+    <a href="https://forms.gle/Wdnc4179tR7yx2aJ7">คลิกลิ้งค์เพื่อตอบแบบสอบถาม</a>
+  </div>
+</div>
+
 </div>
 
      <script>

@@ -1,3 +1,9 @@
+<?php
+
+require_once("../Backend/backend/php/config/condb.php");
+
+?>
+
 <!DOCTYPE html>
 <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
@@ -84,7 +90,7 @@
     <!-------- img banner-->
 
     <section>
-      <img src="/img/banner/1245.png" alt="">
+      <img src="/img/banner/bannerbook.png" alt="">
     </section>
 
   <div class="type-search">
@@ -94,137 +100,32 @@
   </div>
 
     
+  <?php
+    $sql = "SELECT * FROM life_book";
+    $book_data = mysqli_query($conn, $sql);
 
+?>
 
     <!--------------  BODY CARD -------->
 
-    <div class="card-container">
+    <div class="container d-flex flex-wrap m-auto justify-content-center" style="max-width: 100%;">
+    <?php foreach ($book_data as $data) : ?>
 
-    <div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
+    <div class="card shadow" style="width: 21rem; margin-left: 10px; margin-top: 10px; border: 10px solid #FFF; height: auto;">
+  <img src="<?= $data['Image_URL_Sec1']; ?>" class="card-img-top" alt="..." style="max-width: 100%; max-height: 300px; border-radius: 10px;">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
-
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
+    <h5 class="card-title"><?= $data['name']; ?></h5>
+    <p class="card-text"><?= $data['detail']; ?></p>
+    <a href="../page/1.php?id=<?=$data['id']?>" class="btn btn-primary" style="width: 100%;">ดูรายละเอียด</a>
   </div>
 </div>
 
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
+
+
+  <?php endforeach; ?>
 </div>
 
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
 
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
-
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
-<div class="card" style="width: 21rem;">
-  <img src="/img/product/book1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ดูรายละเอียด</button>
-       </div>
-  </div>
-</div>
   
     </div>
 

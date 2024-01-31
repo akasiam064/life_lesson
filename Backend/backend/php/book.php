@@ -1,3 +1,9 @@
+<?php 
+
+require_once("../php/config/connection.php")
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -33,9 +39,9 @@
         <li>
           <a href="/Backend/backend/php/user.php">
             <i class="bx bx-user"></i>
-            <span class="links_name">User</span>
+            <span class="links_name">user</span>
           </a>
-          <span class="tooltip">User</span>
+          <span class="tooltip">user</span>
         </li>
         <li>
           <a href="/Backend/backend/php/book.php">
@@ -59,12 +65,13 @@
           <span class="tooltip">เพิ่มข้อมูล blog</span>
         </li>
         <li>
-          <a href="#">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Setting</span>
+          <a href="../php/comment/comment.php">
+            <i class='bx bx-comment'></i>
+            <span class="links_name">คอมเม้น</span>
           </a>
-          <span class="tooltip">Setting</span>
+          <span class="tooltip">ดูคอมเม้น</span>
         </li>
+        
         <li class="profile">
           <div class="profile-details">
             <img src="/Backend/backend/img/me1.png" alt="profileImg" />
@@ -73,10 +80,11 @@
               <div class="job">Devloper</div>
             </div>
           </div>
-          <i class="bx bx-log-out" id="log_out"></i>
+          <a href="../php/page/life_out.php"><i class="bx bx-log-out" id="log_out"></i></a>
         </li>
       </ul>
     </div>
+
 
     <div class="flex-container">
         <div class="container">
@@ -96,29 +104,55 @@
 
                         </a>
 
+                        <?php 
+          
+                         $sql = "SELECT COUNT(*) as id From life_book";
+                         $query = $conn->prepare($sql);
+                         $query->execute();
+                         $fetch = $query->fetch();
 
-                        <span class="float-end" >มีข้อมูลหนังสือทั้งหมด  รายการ </span>     
+                         ?>
+
+
+                        <span class="float-end" >มีข้อมูลหนังสือทั้งหมด <?= $fetch['id'] ?> รายการ </span>     
                     </div>
                     <div class="col-lg-10">
                         <div class="table-responsive" >
                             <table class="table table-bordered">
                                 <thead>
                                 <tr class="text-center text-light bg-dark">
-                                    <th>#</th>
+                                    <th>ID</th>
                                     <th>img</th>
-                                    <th>username</th>
+                                    <th>ชื่อหนังสือ</th>
+                                    <th>ผู้แต่ง</th>
                                     <th>รายละเอียด</th>
                                     <th>จัดการ</th>
                                 </tr>
                                 </thead>
+                                
                                 <tbody>
+
+                                <?php
+                                $sql ="SELECT * FROM life_book";
+                                $book_data = $conn->prepare($sql);
+                                $book_data->execute();
+                                $data = $book_data->fetch();
+
+                               
+
+                                {
+
+                                ?>
+                                <?PHP foreach($book_data as $data) : ?>
+                                
                                 
                                     <tr class="text-center">
-                                        <td> 1 </td>
-                                        <td><img src="/Backend/backend/img/me1.png" alt="" style="width: 60px; height: 60px;"></td>
-                                        <td>  aaaa</td>
+                                        <td><?= $data['id']; ?></td>
+                                        <td><img src="<?= $data['Image_URL_Sec1']; ?>" alt="" style="width: 60px; height: 60px;"></td>
+                                        <td><?= $data['name']; ?></td>
                                         
-                                        <td> assss </td>
+                                        <td><?= $data['refer']; ?></td>
+                                        <td><?= $data['detail']; ?></td>
                                         <td>
                                             <div class="btn-group">
                                                 <button class="animated-button">
@@ -129,6 +163,7 @@
                                                   
                                                 <button class="edit-button"> <a href="/Backend/backend/php/edit/edit_blog.php?id=">EDIT</a>
                                                 </button>
+                                                <a href="../php/delete/delete_book.php?id=<?=$data['id']?>">
                                                 <button class="bin-button">
                                                     <svg
                                                       class="bin-top"
@@ -166,10 +201,14 @@
                                                       <path d="M21 6V29" stroke="white" stroke-width="4"></path>
                                                     </svg>
                                                   </button>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
-                                    
+                                    <?php endforeach; ?>
+                                <?php 
+                                }
+                                ?>
                                     </div>
                                 
                                 </tbody>
@@ -178,9 +217,67 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
+
+
+    <?php unset($_SESSION['Alert']);
+        unset($_SESSION['name']) ?>
+        <?php
+        function getImageUrl($data)
+        {
+            if (!empty($data['Image_URL_Sec1'])) {
+                return 'img/product/' . $data['Image_URL_Sec1'];
+            } elseif (!empty($data['Image_URL_Sec4'])) {
+                return $data['Image_URL_Sec4'];
+            } elseif (!empty($data['Image_URL_Sec1'])) {
+                return $data['Image_URL_Sec1'];
+            } elseif (!empty($data['Image_Name_Sec1'])) {
+                return $data['Image_Name_Sec1'];
+            } elseif (!empty($data['Image_URL_Sec2'])) {
+                return $data['Image_URL_Sec2'];
+            } elseif (!empty($data['Image_Name_Sec2'])) {
+                return $data['Image_Name_Sec2'];
+            } elseif (!empty($data['Image_URL_Sec3'])) {
+                return $data['Image_URL_Sec3'];
+            } elseif (!empty($data['Image_Name_Sec3'])) {
+                return $data['Image_Name_Sec3'];
+            } else {
+                return 'img/product/NO-IMG.png';
+            }
+        }
+        ?>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/cefc293317.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // เมื่อมีการพิมพ์ใน input id="search"
+                $('#search').on('input', function() {
+                    // ดึงค่าจาก input
+                    var searchValue = $(this).val();
+
+                    // ตรวจสอบว่ามีค่าใน id "search" หรือไม่
+                    if (searchValue) {
+                        // ถ้ามีค่า ให้ซ่อนหรือลบ div ที่มี class="menu-list"
+                        $('.menu-list').hide(); // หรือใช้ .remove() ถ้าต้องการลบทันที
+                    } else {
+                        // ถ้าไม่มีค่า ให้แสดง div ที่มี class="menu-list"
+                        $('.menu-list').show();
+                    }
+
+                    // แสดงผล Realtime ที่ div id="searchResult"
+                    $('#searchResult').load('SearchMenu.php?search=' + searchValue);
+                    // เมื่อโหลดเสร็จแล้ว ลบรายการเมนูที่เก่าออกไป
+                    $('.menu-list ul').empty();
+                });
+            });
+        </script>
+
 
     <script src="/Backend/backend/js/create_book.js"></script>
     <script src="/Backend/backend/js/slim.js"></script>

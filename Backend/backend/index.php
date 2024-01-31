@@ -72,13 +72,6 @@
           </a>
           <span class="tooltip">ดูคอมเม้น</span>
         </li>
-        <li>
-          <a href="/Backend/backend/php/setting.php">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Setting</span>
-          </a>
-          <span class="tooltip">Setting</span>
-        </li>
         <li class="profile">
           <div class="profile-details">
             <img src="/backend/backend/img/me1.png" alt="profileImg" />
@@ -91,48 +84,60 @@
         </li>
       </ul>
     </div>
-    <section class="home-section">
-      <div class="text"><b>DASHBOARD</b></div>
-      <div class="border-console">
+
+    <?php 
+          
+                         $sql = "SELECT COUNT(*) as id From life_user";
+                         $query = $conn->prepare($sql);
+                         $query->execute();
+                         $fetch = $query->fetch();
+
+                         ?>
+ 
+
+    <div class="home-section">
+       <h1>Dashboard Life Team</h1>
+       <div class="alertPanel">
+
         <div class="user">
-          <?php 
-          
-          $sql = "SELECT COUNT(*) as id From life_user";
-          $query = $conn->prepare($sql);
-          $query->execute();
-          $fetch = $query->fetch();
+          <p>จำนวนผู้ใช้</p>
+          <h3><?= $fetch['id'] ?> USER</h3>
+          <div class="time-stamp">
+          <i class='bx bx-time'></i>
+          <span>อัพเดทล่าสุด</span>
+          </div>
+        </div>
 
-          ?>
-          <span><?= $fetch['id'] ?> ผู้ใช้</span>
+        <div class="book">
+          <p>จำนวนหนังสือ</p>
+          <h3>3 BOOK</h3>
+          <div class="time-stamp">
+          <i class='bx bx-time'></i>
+          <span>อัพเดทล่าสุด</span>
+          </div>
         </div>
-        <div class="viwe">
-        <?php 
-          
-          $sql = "SELECT COUNT(*) as nouser From life_counter";
-          $query = $conn->prepare($sql);
-          $query->execute();
-          $fetch = $query->fetch();
 
-          ?>
-          <span><?= $fetch['nouser'] ?> คนดู</span>
+        <div class="podcat">
+          <p>จำนวน podcat</p>
+          <h3>4 podcat</h3>
+          <div class="time-stamp">
+          <i class='bx bx-time'></i>
+          <span>อัพเดทล่าสุด</span>
+          </div>
         </div>
-        <div class="bbp"><span>
-          16 หนังสือ
-        </span></div>
-      </div>
-      <div class="alert-input">
-        <div class="ass">
-          <span class="as">แจ้งเตือน</span>
+
+        <div class="blog">
+          <p>จำนวน blog</p>
+          <h3>4 BLOG</h3>
+          <div class="time-stamp">
+          <i class='bx bx-time'></i>
+          <span>อัพเดทล่าสุด</span>
+          </div>
         </div>
-        
-        <div class="message">
-          <div class="m1">มีการเข้าสู่ระบบ dev  |   <span>1.56 pm</span></div>
-          <div class="m2">มีการเพิ่มฐานข้อมูล | BOOK | <span>2 pm</span></div>
-          <div class="m3">มีการแข้ไขฐานข้อมูล | BOOK | <span>3.15 pm</span></div>
-          <div class="m4">มีการลบฐานข้อมูล | BOOK |<span>3.20 pm</span></div>
-        </div>
-      </div>
-    </section>
+       </div>
+    </div>
+
+
 
     <script src="/Backend/backend/js/create_book.js"></script>
     <script src="/Backend/backend/js/slim.js"></script>

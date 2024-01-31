@@ -59,11 +59,11 @@
           <span class="tooltip">เพิ่มข้อมูล blog</span>
         </li>
         <li>
-          <a href="#">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Setting</span>
+          <a href="../comment/comment.php">
+            <i class='bx bx-comment'></i>
+            <span class="links_name">คอมเม้น</span>
           </a>
-          <span class="tooltip">Setting</span>
+          <span class="tooltip">ดูคอมเม้น</span>
         </li>
         <li class="profile">
           <div class="profile-details">
@@ -73,7 +73,7 @@
               <div class="job">Devloper</div>
             </div>
           </div>
-          <i class="bx bx-log-out" id="log_out"></i>
+          <a href="../php/page/life_out.php"><i class="bx bx-log-out" id="log_out"></i></a>
         </li>
       </ul>
     </div>
@@ -81,39 +81,29 @@
     <div class="container-sm px1">
         <div class="card mt3 shadow-sm">
             <div class="card-header">
-                <h4 class="mb-0">เพิ่มข้อมูลหนังสือ <a href="../user.php" class="btn btn-dark float-end">Back</a></h4>
+                <h4 class="mb-0">เพิ่มข้อมูล blog <a href="../blog.php" class="btn btn-dark float-end">Back</a></h4>
             </div>
             <div class="card-body">
-                <form action="" method="post">
+                <form action="../create/create_blog_func.php" method="post">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-3">
                             <label for="">ชื่อหัวข้อ</label>
-                            <input type="email" required name="email" class="form-control">
+                            <input type="text" required name="name" class="form-control">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="">อ้างอิง</label>
-                            <input type="text" required name="username" class="form-control">
+                            <input type="text" required name="refer" class="form-control">
                         </div>
                         <div class="mb-3">
                            <label for="exampleFormControlTextarea1" class="form-label">รายละเอียด</label>
-                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail"></textarea>
                         </div>
                         <div class="col m-3">
-                        <img src="" alt="Image Preview" id="image-preview-sec2" style="max-width: 100%; max-height: 100px;">
-                        <label for="image-url-sec2">ภาพขึ้นหน้า book page</label>
+                        <img src="" alt="Image Preview" id="image-preview-sec1" style="max-width: 100%; max-height: 100px;">
+                        <label for="image-url-sec1">ภาพขึ้นหน้า blog page</label>
                         <br>
-                        <input class="form-control" type="text" name="Image_URL_Sec1" id="image-url-sec2" placeholder="ใส่ url ภาพ" oninput="preview('sec2')" required value="
-                        <?php
-                                if (!empty($data['Image_URL_Sec2'])) {
-                                    echo $data['Image_URL_Sec2'];
-                                        } else {
-                                            if (!empty($data['Img_Name_Sec1'])) {
-                                                echo '/img/product/' . $data['Img_Name_Sec1'];
-                                                        } else {
-                                            echo '';
-                                        }
-                                    }
-                        ?>">
+                        <input class="form-control" type="text" name="Image_URL_Sec1" id="image-url-sec1" placeholder="ใส่ url ภาพ" oninput="preview('sec1')" required >
+                        
                         <br>
                         <div class="d-grid gap-2">
                                  <button class="btn btn-danger" type="button" onclick="clearFileInput('sec1')">ลบรูปภาพ</button>
@@ -124,20 +114,9 @@
                         <img src="" alt="Image Preview" id="image-preview-sec2" style="max-width: 100%; max-height: 100px;">
                         <label for="image-url-sec2">ภาพ product img 1</label>
                         <br>
-                        <input class="form-control" type="text" name="Image_URL_Sec2" id="image-url-sec2" placeholder="ใส่ url ภาพ" oninput="preview('sec2')" required value="
-                        <?php
-                                if (!empty($data['Image_URL_Sec2'])) {
-                                    echo $data['Image_URL_Sec2'];
-                                        } else {
-                                            if (!empty($data['Img_Name_Sec2'])) {
-                                                echo '/img/product/' . $data['Img_Name_Sec2'];
-                                                        } else {
-                                            echo '';
-                                        }
-                                    }
-                        ?>">
+                        <input class="form-control" type="text" name="Image_URL_Sec2" id="image-url-sec2" placeholder="ใส่ url ภาพ" oninput="preview('sec2')" required >
+                        
                         <br>
-
                         <div class="d-grid gap-2">
                                  <button class="btn btn-danger" type="button" onclick="clearFileInput('sec2')">ลบรูปภาพ</button>
                         </div>
@@ -147,20 +126,9 @@
                         <img src="" alt="Image Preview" id="image-preview-sec3" style="max-width: 100%; max-height: 100px;">
                         <label for="image-url-sec2">ภาพ product img 2</label>
                         <br>
-                        <input class="form-control" type="text" name="Image_URL_Sec3" id="image-url-sec3" placeholder="ใส่ url ภาพ" oninput="preview('sec3')" required value="
-                        <?php
-                                if (!empty($data['Image_URL_Sec3'])) {
-                                    echo $data['Image_URL_Sec3'];
-                                        } else {
-                                            if (!empty($data['Img_Name_Sec3'])) {
-                                                echo '/img/product/' . $data['Img_Name_Sec3'];
-                                                        } else {
-                                            echo '';
-                                        }
-                                    }
-                        ?>">
+                        <input class="form-control" type="text" name="Image_URL_Sec3" id="image-url-sec3" placeholder="ใส่ url ภาพ" oninput="preview('sec3')" required >
+                        
                         <br>
-
                         <div class="d-grid gap-2">
                                  <button class="btn btn-danger" type="button" onclick="clearFileInput('sec3')">ลบรูปภาพ</button>
                         </div>
@@ -170,20 +138,9 @@
                         <img src="" alt="Image Preview" id="image-preview-sec4" style="max-width: 100%; max-height: 100px;">
                         <label for="image-url-sec2">ภาพ product img 3</label>
                         <br>
-                        <input class="form-control" type="text" name="Image_URL_Sec4" id="image-url-sec4" placeholder="ใส่ url ภาพ" oninput="preview('sec4')" required value="
-                        <?php
-                                if (!empty($data['Image_URL_Sec2'])) {
-                                    echo $data['Image_URL_Sec2'];
-                                        } else {
-                                            if (!empty($data['Img_Name_Sec4'])) {
-                                                echo '/img/product/' . $data['Img_Name_Sec4'];
-                                                        } else {
-                                            echo '';
-                                        }
-                                    }
-                        ?>">
+                        <input class="form-control" type="text" name="Image_URL_Sec4" id="image-url-sec4" placeholder="ใส่ url ภาพ" oninput="preview('sec4')" required >
+                        
                         <br>
-
                         <div class="d-grid gap-2">
                                  <button class="btn btn-danger" type="button" onclick="clearFileInput('sec4')">ลบรูปภาพ</button>
                         </div>
@@ -193,7 +150,7 @@
                         </div>
                         
                         <div class="d-grid gap-2">
-                              <button class="btn btn-primary" type="saveuser">ยืนยันการสร้าง product หนังสือ</button>
+                              <button class="btn btn-primary" type="submit" name="submit">ยืนยันการสร้าง product Blog</button>
                         </div>
                     </div>
                 </form>
@@ -256,6 +213,80 @@
             document.getElementById(`image-preview-${section}`).src = '';
         }
     </script>
+    <script>
+        var player;
+
+        // Function to extract YouTube video ID from URL
+        function getYoutubeVideoId(url) {
+            var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+            var match = url.match(regExp);
+            return (match && match[7].length == 11) ? match[7] : false;
+        }
+
+        // Function to create the YouTube player and generate embed code
+        function createYoutubePlayer(videoId) {
+            // Destroy the existing player if it exists
+            if (player) {
+                player.destroy();
+            }
+
+            // Create the YouTube player
+            player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                videoId: videoId,
+            });
+
+            // Generate embed code for the given video ID
+            var embedCode = '<iframe width="640" height="360" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
+
+            // Display the embed code or use it as needed
+            console.log("Embed Code:", embedCode);
+        }
+
+
+        // Event listener for input change
+        document.getElementById('youtube-url').addEventListener('input', function() {
+            // Get the YouTube URL from the input
+            var youtubeUrl = this.value;
+
+            // Extract the video ID from the URL
+            var videoId = getYoutubeVideoId(youtubeUrl);
+
+            // Check if a valid video ID is extracted
+            if (videoId) {
+                // Create the YouTube player and generate embed code
+                createYoutubePlayer(videoId);
+            } else {
+                // If invalid video ID, clear the YouTube player
+                clearYoutubePlayer();
+            }
+        });
+
+        // Function to clear the YouTube player
+        function clearYoutubePlayer() {
+            // Destroy the player if it exists
+            if (player) {
+                player.destroy();
+            }
+        }
+
+        // Event listener for clearing the YouTube player
+        document.getElementById('clear-button').addEventListener('click', function() {
+            // Clear the input field
+            document.getElementById('youtube-url').value = '';
+
+            // Clear the YouTube player
+            clearYoutubePlayer();
+        });
+    </script>
+
+
+
+
+
+
+    <script src="https://www.youtube.com/iframe_api"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

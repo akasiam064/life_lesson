@@ -60,11 +60,11 @@
           <span class="tooltip">เพิ่มข้อมูล blog</span>
         </li>
         <li>
-          <a href="#">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Setting</span>
+          <a href="../comment/comment.php">
+            <i class='bx bx-comment'></i>
+            <span class="links_name">คอมเม้น</span>
           </a>
-          <span class="tooltip">Setting</span>
+          <span class="tooltip">ดูคอมเม้น</span>
         </li>
         <li class="profile">
           <div class="profile-details">
@@ -74,7 +74,7 @@
               <div class="job">Devloper</div>
             </div>
           </div>
-          <i class="bx bx-log-out" id="log_out"></i>
+          <a href="../php/page/life_out.php"><i class="bx bx-log-out" id="log_out"></i></a>
         </li>
       </ul>
     </div>

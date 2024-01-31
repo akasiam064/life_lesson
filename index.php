@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
@@ -131,7 +133,7 @@
     <div class="banner-blog"><img src="/img/banner/bannerblog.png" alt=""></div>
 
     <!---------- Blog Learning ----------->
-   
+    
     <section>
       <div class="blog">
 
@@ -152,6 +154,7 @@
                 <button><span>รายละเอียด</span></button>
               </div>
           </div>
+
 
           
             <div class="blog-type">
@@ -180,6 +183,7 @@
               </div>
 
             </div>
+            
 
         </div>
 

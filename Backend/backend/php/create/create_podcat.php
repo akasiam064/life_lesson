@@ -59,11 +59,11 @@
           <span class="tooltip">เพิ่มข้อมูล blog</span>
         </li>
         <li>
-          <a href="#">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Setting</span>
+          <a href="../comment/comment.php">
+            <i class='bx bx-comment'></i>
+            <span class="links_name">คอมเม้น</span>
           </a>
-          <span class="tooltip">Setting</span>
+          <span class="tooltip">ดูคอมเม้น</span>
         </li>
         <li class="profile">
           <div class="profile-details">
@@ -73,7 +73,7 @@
               <div class="job">Devloper</div>
             </div>
           </div>
-          <i class="bx bx-log-out" id="log_out"></i>
+          <a href="../php/page/life_out.php"><i class="bx bx-log-out" id="log_out"></i></a>
         </li>
       </ul>
     </div>
@@ -81,29 +81,29 @@
     <div class="container-sm px1">
         <div class="card mt3 shadow-sm">
             <div class="card-header">
-                <h4 class="mb-0">เพิ่มข้อมูลหนังสือ <a href="../user.php" class="btn btn-dark float-end">Back</a></h4>
+                <h4 class="mb-0">เพิ่มข้อมูลหนังสือ <a href="../podcat.php" class="btn btn-dark float-end">Back</a></h4>
             </div>
             <div class="card-body">
-                <form action="" method="post">
+                <form action="../create/create_podcat_func.php" method="post">
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="">ชื่อหัวข้อ</label>
-                            <input type="email" required name="email" class="form-control">
+                            <input type="text" required name="name" class="form-control">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="">อ้างอิง</label>
-                            <input type="text" required name="username" class="form-control">
+                            <input type="text" required name="refer" class="form-control">
                         </div>
                         <div class="mb-3">
                            <label for="exampleFormControlTextarea1" class="form-label">รายละเอียด</label>
-                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail"></textarea>
                         </div>
                         <div class="col m-3">
                         <div class="YT-V-Size" style="max-width: 100%; max-height: 200px;" id="player"></div>
                         <label for="youtube-url">ลิงก์ YouTube:</label>
-                        <input class="form-control" type="text" id="youtube-url" placeholder="Enter YouTube URL" required name="YT_URL" value="<?= $data['YT_URL']; ?>">
-                        <br>
-                        <div class="YT-V-Size" id="player"></div>
+                        <input class="form-control" type="text" id="youtube-url" placeholder="Enter YouTube URL" required name="YT_URL" >
+                        
+                        
                         </div>
                         
 
@@ -111,18 +111,8 @@
                         <img src="" alt="Image Preview" id="image-preview-sec2" style="max-width: 100%; max-height: 200px;">
                         <label for="image-url-sec2">ภาพ product img 1</label>
                         <br>
-                        <input class="form-control" type="text" name="Image_URL_Sec2" id="image-url-sec2" placeholder="ใส่ url ภาพ" oninput="preview('sec2')" required value="
-                        <?php
-                                if (!empty($data['Image_URL_Sec2'])) {
-                                    echo $data['Image_URL_Sec2'];
-                                        } else {
-                                            if (!empty($data['Img_Name_Sec2'])) {
-                                                echo '/img/product/' . $data['Img_Name_Sec2'];
-                                                        } else {
-                                            echo '';
-                                        }
-                                    }
-                        ?>">
+                        <input class="form-control" type="text" name="Image_URL_Sec2" id="image-url-sec2" placeholder="ใส่ url ภาพ" oninput="preview('sec2')" required >
+                        
                         <br>
                         <div class="d-grid gap-2">
                                  <button class="btn btn-danger" type="button" onclick="clearFileInput('sec2')">ลบรูปภาพ</button>
@@ -133,18 +123,8 @@
                         <img src="" alt="Image Preview" id="image-preview-sec3" style="max-width: 100%; max-height: 200px;">
                         <label for="image-url-sec2">ภาพ product img 2</label>
                         <br>
-                        <input class="form-control" type="text" name="Image_URL_Sec3" id="image-url-sec3" placeholder="ใส่ url ภาพ" oninput="preview('sec3')" required value="
-                        <?php
-                                if (!empty($data['Image_URL_Sec3'])) {
-                                    echo $data['Image_URL_Sec3'];
-                                        } else {
-                                            if (!empty($data['Img_Name_Sec3'])) {
-                                                echo '/img/product/' . $data['Img_Name_Sec3'];
-                                                        } else {
-                                            echo '';
-                                        }
-                                    }
-                        ?>">
+                        <input class="form-control" type="text" name="Image_URL_Sec3" id="image-url-sec3" placeholder="ใส่ url ภาพ" oninput="preview('sec3')" required >
+                        
                         <br>
                         <div class="d-grid gap-2">
                                  <button class="btn btn-danger" type="button" onclick="clearFileInput('sec3')">ลบรูปภาพ</button>
@@ -155,18 +135,8 @@
                         <img src="" alt="Image Preview" id="image-preview-sec4" style="max-width: 100%; max-height: 200px;">
                         <label for="image-url-sec2">ภาพ product img 3</label>
                         <br>
-                        <input class="form-control" type="text" name="Image_URL_Sec4" id="image-url-sec4" placeholder="ใส่ url ภาพ" oninput="preview('sec4')" required value="
-                        <?php
-                                if (!empty($data['Image_URL_Sec2'])) {
-                                    echo $data['Image_URL_Sec2'];
-                                        } else {
-                                            if (!empty($data['Img_Name_Sec4'])) {
-                                                echo '/img/product/' . $data['Img_Name_Sec4'];
-                                                        } else {
-                                            echo '';
-                                        }
-                                    }
-                        ?>">
+                        <input class="form-control" type="text" name="Image_URL_Sec4" id="image-url-sec4" placeholder="ใส่ url ภาพ" oninput="preview('sec4')" required >
+                        
                         <br>
                         <div class="d-grid gap-2">
                                  <button class="btn btn-danger" type="button" onclick="clearFileInput('sec4')">ลบรูปภาพ</button>
@@ -177,7 +147,7 @@
                         </div>
                         
                         <div class="d-grid gap-2">
-                              <button class="btn btn-primary" type="saveuser">ยืนยันการสร้าง product หนังสือ</button>
+                              <button class="btn btn-primary" type="submit" name="submit">ยืนยันการสร้าง product Podcat</button>
                         </div>
                     </div>
                 </form>
